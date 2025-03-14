@@ -28,45 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            lblResponse = new Label();
+            dtviewData = new DataGridView();
+            YearColumn = new DataGridViewTextBoxColumn();
+            DolarValueColumn = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dtviewData).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // dtviewData
             // 
-            button1.Location = new Point(115, 93);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            dtviewData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtviewData.Columns.AddRange(new DataGridViewColumn[] { YearColumn, DolarValueColumn });
+            dtviewData.Location = new Point(78, 73);
+            dtviewData.Name = "dtviewData";
+            dtviewData.Size = new Size(238, 342);
+            dtviewData.TabIndex = 3;
             // 
-            // lblResponse
+            // YearColumn
             // 
-            lblResponse.AutoSize = true;
-            lblResponse.Location = new Point(379, 131);
-            lblResponse.Name = "lblResponse";
-            lblResponse.Size = new Size(38, 15);
-            lblResponse.TabIndex = 1;
-            lblResponse.Text = "label1";
+            YearColumn.HeaderText = "Year";
+            YearColumn.Name = "YearColumn";
+            // 
+            // DolarValueColumn
+            // 
+            DolarValueColumn.HeaderText = "Dolar price in Peso(MXN)";
+            DolarValueColumn.Name = "DolarValueColumn";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(lblResponse);
-            Controls.Add(button1);
+            Controls.Add(dtviewData);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)dtviewData).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Button button1;
-        private Label lblResponse;
+        private DataGridView dtviewData;
+        private DataGridViewTextBoxColumn YearColumn;
+        private DataGridViewTextBoxColumn DolarValueColumn;
     }
 }
